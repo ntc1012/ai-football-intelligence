@@ -58,6 +58,16 @@ Video / data ingest
 
 Secrets and local config live in `.env` (see `.env.example`). Do not commit real keys.
 
+## Development Environment
+
+Local Python is **3.14**, with an isolated virtual environment at `.venv` (gitignored; already created for this branch). Package lists live under `requirements/` and are **not installed in this step**.
+
+- `requirements/base.txt` — foundational runtime (FastAPI, Uvicorn)
+- `requirements/dev.txt` — development and testing tooling (`-r base.txt`, plus pytest, ruff, mypy)
+- `requirements/ai.txt` — OpenCV, PyTorch, YOLO, and tracking notes; versions left as comments until 3.14 / CUDA compatibility is verified
+
+When installing later, activate `.venv` first, then use the matching file (for example `pip install -r requirements/dev.txt`). Do not mix system Python with this environment.
+
 ## Development roadmap
 
 1. **Foundation** — this repository layout, local Postgres/Redis via Docker, environment conventions

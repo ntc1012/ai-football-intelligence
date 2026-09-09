@@ -1,0 +1,5 @@
+# Foundational runtime. Unpinned until Python 3.14 wheels are confirmed.
+# Install later with: pip install -r requirements/base.txt
+
+fastapi
+uvicorn[standard]

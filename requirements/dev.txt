@@ -1,0 +1,9 @@
+# Development and testing only. Includes runtime via base.txt.
+# Install later with: pip install -r requirements/dev.txt
+
+-r base.txt
+
+pytest
+pytest-cov
+ruff
+mypy

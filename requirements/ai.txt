@@ -1,0 +1,18 @@
+# Computer vision / deep learning. Do not install until Python 3.14
+# compatibility (and CPU vs CUDA PyTorch index) is verified.
+# Intended later install: pip install -r requirements/ai.txt
+
+-r base.txt
+
+# opencv-python  # OpenCV — pin after confirming 3.14 wheels
+# torch          # PyTorch — choose CPU or CUDA extra-index-url before pinning
+# ultralytics    # YOLO — depends on torch; pin after torch is settled
+# numpy          # usually pulled by the above; pin only if we need it directly
+
+# Tracking (ByteTrack or BoT-SORT): BoT-SORT ships with ultralytics.
+# ByteTrack is not a stable standalone PyPI pin yet — decide when tracking work starts.
+
+torch==2.14.0+cu126
+torchvision
+torchaudio
+numpy==2.5.2
